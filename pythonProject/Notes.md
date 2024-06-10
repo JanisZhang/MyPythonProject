@@ -220,6 +220,14 @@ for car in cars:
         print(car.upper())
     else:
         print(car.title())
+---
+age = 12
+if age < 4:
+    print("You are a child")
+elif age < 18:
+    print("You are a teenager")
+else:
+    print("You are cold")
 ```
 - 比较 (and、or)
 ```python
@@ -230,6 +238,15 @@ print(car.upper() == 'Audi'.upper())
 age_0 = 22
 age_1 = 8
 print( age_0 > 10 and age_0 < 20)
+---
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+   price = 100
+else:
+    price = 200
+print(price)
 ```
 - 检查特定的值在不在列表中
 ```python
@@ -245,4 +262,218 @@ print('mushrooms' in requested_toppings)
 can_edit = False
 print(can_edit)
 ```
+- 检查特殊元素
+```python
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+
+for item in requested_toppings:
+    if item == 'green peppers':
+        print("sorry,we don't have green peppers")
+    else:
+        print(f"adding {item}")
+```
+- 在for循环前确定列表非空
+```python
+requested_toppings = []
+
+if requested_toppings:
+    for item in requested_toppings:
+        if item == 'green peppers':
+            print("sorry,we don't have green peppers")
+else:
+    print("plain pizza")
+```
+
+## 字典
+- 字典是一系列键值对
+```python
+alien_0 = {'color': 'blue', 'weight': 100}
+print(alien_0['color'])
+print(alien_0['weight'])
+```
+- 添加键值对
+```python
+alien_0 = {}
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+---
+{'x_position': 0, 'y_position': 25}
+```
+- 修改字典中的值
+```python
+alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+print(f"Original position: {alien_0['x_position']}")
+
+if alien_0['speed'] == 'slow':
+    x_increment = 1
+elif alien_0['speed'] == 'medium':
+    x_increment = 2
+else:
+    x_increment = 3
+
+alien_0['x_position'] = alien_0['x_position'] + x_increment
+print(f"New position: {alien_0['x_position']}")
+```
+- 删除字典中的值
+```python
+del alien_0['x_position']
+print(alien_0)
+```
+- 使用get来访问值。（如果指定的键可能不存在，应考虑使用get方法）
+```python
+alien_0 = {'color': 'green', 'speed': 'slow'}
+print(alien_0['point'])
+---
+print(alien_0.get('point', 'No this value'))
+```
+- 遍历字典
+- 遍历所有键值对 - items()
+```
+user_0 = {
+    'username':'efermi',
+    'first':'enrico',
+    'last':'fermi'
+}
+
+for key,value in user_0.items():
+    print(f'key is {key}')
+    print(f'value is {value}')
+```
+
+- 遍历字典中的所有key - keys()
+```
+for key in user_0.keys():
+    print(key.title())
+```
+```
+favorite_language = {
+    'Test1':'Japanese',
+    'Test2':'Chinese',
+    'phil':'English'
+}
+friends = ['phil', 'sarah']
+
+for name in favorite_language.keys():
+    print(f'Hi {name.title()}')
+
+    if name in friends:
+        language = favorite_language[name].title()
+        print(f'Nice to meet you, {name}!, I see you love {language}')
+
+    if name not in friends:
+        print(f'{name} not my friends.')
+```
+
+- 按特定的顺序遍历字典中的所有键 - sorted()
+```
+favorite_language = {
+    'jen':'python',
+    'sarah':'c',
+    'edward':'rust',
+    'phil':'pyhton'
+}
+
+for name in sorted(favorite_language.keys()):
+    print(f'{name.title()}, thank you for taking the poll.')
+```
+
+- 遍历字典中的所有value - values()
+```
+for value in sorted(favorite_language.values()):
+    print(f'value')
+```
+
+- 去除重复项 - set()
+```
+for language in set(favorite_language.values()):
+    print(language.title())
+```
+
+- 使用花括号创建集合
+```
+sara_favorite_language = {'java','rust','c'}
+favorite_language = {
+    'jen':'python',
+    'sara':sara_favorite_language,
+    'edward':'rust',
+    'phil':'python',
+    'sarah':'c',
+}
+
+# find sara's favorite language
+for name in favorite_language.keys():
+    if name == 'sara':
+        print(favorite_language[name])
+```
+
+### 嵌套
+```
+aliens = []
+
+for alien_number in range(30):
+    new_ailen = {'color':'green','points':5,'speed':'slow'}
+    aliens.append(new_ailen)
+
+for alien in aliens[:5]:
+    print(alien)
+
+print(f'Total number of ailens: {len(aliens)}')
+```
+- 修改外星人
+```
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['speed'] = 'fast'
+        alien['points'] = 10
+
+for alien in aliens[:5]:
+    print(alien)
+```
+
+- 在字典中存储列表/字典
+```
+pizza = {
+    'crust':'thick',
+    'toppings':['mushrooms','extra cheese']
+}
+
+print(f"You ordered a {pizza['crust']} -crust pizza")
+
+for topping in pizza['toppings']:
+    print(f'\t{topping}')
+
+```
+```
+favorite_language = {
+    'jen':['python','rust'],
+    'sara':['rust','go'],
+    'phil':['python','haskell'],
+    'sarah':['c'],
+}
+
+
+for name,languages in favorite_language.items():
+    if len(languages) >1:
+        print(f"{name.title()}'s favorite languages are:")
+    else:
+        print(f"{name.title()}'s favorite languages is:")
+
+    for language in languages:
+        print(f'\t{language.title()}')
+```
+
+
+## 用户输入和while循环。
+
+
+
+
+
+
+
+
+
+
 

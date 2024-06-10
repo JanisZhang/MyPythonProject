@@ -179,8 +179,197 @@ test
 # requested_toppings = ['mushrooms', 'extra cheese', 'onions']
 # print('mushrooms' in requested_toppings)
 
-can_edit = False
-print(can_edit)
+# can_edit = False
+# print(can_edit)
+#
+# car = 'subaru'
+# print('I predict True')
+# print(car == 'subaru')
+#
+# print(car == 'audi')
+# print('I predict False')
+
+# age = 12
+# if age < 4:
+#     price = 0
+# elif age < 18:
+#    price = 100
+# else:
+#     price = 200
+# print(price)
+
+# requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+
+# requested_toppings = []
+#
+# if requested_toppings:
+#     for item in requested_toppings:
+#         if item == 'green peppers':
+#             print("sorry,we don't have green peppers")
+# else:
+#     print("plain pizza")
+
+# list = [value for value in range(1, 10)]
+#
+# if list:
+#    for value in list:
+#         if value == 1:
+#             result = str(value) + 'st'
+#         elif value == 2:
+#             result = str(value) + 'nd'
+#         elif value == 3:
+#             result = str(value) + 'rd'
+#         else:
+#             result = str(value) + 'th'
+#         print(result)
+
+# alien_0 = {'color': 'blue', 'weight': 100}
+# print(alien_0['color'])
+# print(alien_0['weight'])
+# alien_0 = {}
+# alien_0['x_position'] = 0
+# alien_0['y_position'] = 25
+# print(alien_0)
+
+# alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+# print(f"Original position: {alien_0['x_position']}")
+#
+# if alien_0['speed'] == 'slow':
+#     x_increment = 1
+# elif alien_0['speed'] == 'medium':
+#     x_increment = 2
+# else:
+#     x_increment = 3
+#
+# alien_0['x_position'] = alien_0['x_position'] + x_increment
+# print(f"New position: {alien_0['x_position']}")
+# print(alien_0)
+# del alien_0['x_position']
+# print(alien_0)
+
+# alien_0 = {'color': 'green', 'speed': 'slow'}
+# print(alien_0['point'])
+#
+# print(alien_0.get('point', 'No this value'))
+
+
+# user_0 = {
+# 	'username':'efermi',
+# 	'first':'enrico',
+# 	'last':'fermi'
+# }
+
+# for key,value in user_0.items():
+# 	print(f'key is {key}')
+# 	print(f'value is {value}')
+
+# for key in user_0.keys():
+# 	print(key.title())
+
+# favorite_language = {
+# 	'Test1':'Japanese',
+# 	'Test2':'Chinese',
+# 	'phil':'English'
+# }
+# friends = ['phil', 'sarah']
+
+# for name in favorite_language.keys():
+# 	print(f'Hi {name.title()}')
+
+# 	if name in friends:
+# 		language = favorite_language[name].title()
+# 		print(f'Nice to meet you, {name}!, I see you love {language}')
+
+# 	if name not in friends:
+# 		print(f'{name} not my friends.')
+
+# favorite_language = {
+# 	'jen':'python',
+# 	'sarah':'c',
+# 	'edward':'rust',
+# 	'phil':'pyhton'
+# }
+
+# for name in sorted(favorite_language.keys()):
+# 	print(f'{name.title()}, thank you for taking the poll.')
+
+# for value in sorted(favorite_language.values()):
+# 	print(f'{value}')
+
+# favorite_language = {
+# 	'jen':'python',
+# 	'sara':'c',
+# 	'edward':'rust',
+# 	'phil':'python',
+# 	'sarah':'c',
+# }
+
+# for language in set(favorite_language.values()):
+# 	print(language.title())
+
+# sara_favorite_language = {'java','rust','c'}
+# favorite_language = {
+# 	'jen':'python',
+# 	'sara':sara_favorite_language,
+# 	'edward':'rust',
+# 	'phil':'python',
+# 	'sarah':'c',
+# }
+
+# # find sara's favorite language
+# for name in favorite_language.keys():
+# 	if name == 'sara':
+# 		print(favorite_language[name])
+
+# aliens = []
+
+# for alien_number in range(30):
+# 	new_ailen = {'color':'green','points':5,'speed':'slow'}
+# 	aliens.append(new_ailen)
+
+# for alien in aliens[:5]:
+# 	print(alien)
+
+# print(f'Total number of ailens: {len(aliens)}')
+
+# # 修改外星人
+
+# for alien in aliens[:3]:
+# 	if alien['color'] == 'green':
+# 		alien['color'] = 'yellow'
+# 		alien['speed'] = 'fast'
+# 		alien['points'] = 10
+
+# for alien in aliens[:5]:
+# 	print(alien)
+
+# pizza = {
+# 	'crust':'thick',
+# 	'toppings':['mushrooms','extra cheese']
+# }
+
+# print(f"You ordered a {pizza['crust']} -crust pizza")
+
+# for topping in pizza['toppings']:
+# 	print(f'\t{topping}')
+
+# favorite_language = {
+# 	'jen':['python','rust'],
+# 	'sara':['rust','go'],
+# 	'phil':['python','haskell'],
+# 	'sarah':['c'],
+# }
+
+
+# for name,languages in favorite_language.items():
+# 	if len(languages) >1:
+# 		print(f"{name.title()}'s favorite languages are:")
+# 	else:
+# 		print(f"{name.title()}'s favorite languages is:")
+
+# 	for language in languages:
+# 		print(f'\t{language.title()}')
+
 
 
 
