@@ -370,6 +370,61 @@ test
 # 	for language in languages:
 # 		print(f'\t{language.title()}')
 
+# message = input("tell me something, i'll print it\n")
+# print(message)
+
+# prompt = "What's your name?\n"
+# message = input(prompt)
+# print(f'Hello, {message}')
+
+# prompt = "What's your age?\n"
+# age = input(prompt)
+
+# if int(age) > 18:
+# 	print('teenager')
+# else: 
+# 	print('child')
+
+
+# current_number = 1
+# while current_number <= 5:
+# 	print(current_number)
+# 	current_number+=1
+
+
+# unconfirmed_users = ['alice','brian','candace']
+# confirmed_users = []
+
+# while unconfirmed_users:
+# 	current_user = unconfirmed_users.pop()
+
+# 	print(f"Verifying user: {current_user.title()}")
+# 	confirmed_users.append(current_user)
+
+# print("\nThe following users have been confirmed:")
+# for confirmed_user in confirmed_users:
+# 	print(confirmed_user.title())
+
+
+# pets = ["cat", "dog", "mouse", "rabbit", "cat"]
+# print(pets)
+#
+# while 'cat' in pets:
+#     pets.remove('cat')
+#
+# print(pets)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

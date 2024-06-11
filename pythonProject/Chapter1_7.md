@@ -465,9 +465,64 @@ for name,languages in favorite_language.items():
 ```
 
 
-## 用户输入和while循环。
+## 用户输入和while循环
+- input()函数
+```
+message = input("tell me something, i'll print it\n")
+print(message)
 
+prompt = "What's your name?\n"
+message = input(prompt)
+print(f'Hello, {message}')
+```
+- int()函数
+```
+prompt = "What's your age?\n"
+age = input(prompt)
 
+if int(age) > 18:
+    print('teenager')
+else: 
+    print('child')
+```
+- 求模运算符（%）- 计算余数
+
+- while循环
+```
+current_number = 1
+while current_number <= 5:
+    print(current_number)
+    current_number+=1
+```
+
+### 使用while循环处理列表和字典
+- 在列表之间移动元素
+```
+unconfirmed_users = ['alice','brian','candace']
+confirmed_users = []
+
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+
+    print(f"Verifying user: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+print("\nThe following users have been confirmed:")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+
+```
+
+- 删除为特定值的所有列表元素
+```
+pets = ["cat", "dog", "mouse", "rabbit", "cat"]
+print(pets)
+
+while 'cat' in pets:
+    pets.remove('cat')
+
+print(pets)
+```
 
 
 
