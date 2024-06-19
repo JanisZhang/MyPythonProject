@@ -265,10 +265,144 @@ my_leaf = EC('nissan', 'leaf', 2024)
 ```
 
 ## python 标准库
-python标准库是一组模块，在安装python时已经包含在内。
+python标准库是一组模块，在安装python时已经包含在内。  
 
+- random模块的函数，randint()和choice
+```python
+from random import randint
 
+print(randint(1,6))
 
+from random import choice
+
+players = ['carles','michael','florence','eli']
+first = choice(players)
+second = choice(players)
+print(first)
+print(second)
+```
+- 类名应采用驼峰命名法，并且不使用下划线
+- 实例名和模块名都次啊用全小写格式，并在单词之间加上下划线
+
+## 文件和异常
+- 读取文件全部内容
+- pathlib模块处理文件和目录
+```python
+from pathlib import Path
+
+path = Path('resources/pi_digits.txt')
+content = path.read_text()
+print(content)
+```
+#### 相对路径和绝对路径
+- 绝对路径通常比相对路径⻓，因为它们以系统的根文件夹为起点
+
+### 访问文件中的各行
+```python
+path = Path('resources/pi_digits.txt')
+content = path.read_text()
+lines = content.splitlines()
+
+for line in lines:
+    if '323846' in line:
+        print(line)
+
+pi_string = ''
+
+for line in lines:
+    pi_string += line.lstrip()
+
+print(pi_string)
+print(len(pi_string))
+```
+
+- 包含100万位的大型文件：在可处理的数据量方面，Python没有任何限制。只要系统的内存足够大，想处理多少数据就可以处理多少数据。
+
+### 写入文件
+```python
+path = Path('resources/pi_digits.txt')
+content = 'hello world.\n'
+content += 'This is the first line.\n'
+content += 'This is the second line.\n'
+path.write_text( content)
+```
+
+### 异常
+异常试是使用try-except代码块处理的
+```python
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+    
+```
+- else 代码块
+```python
+print("Give me two numbers, and I'll divide them.\n")
+print("Enter 'q' to exit\n")
+while True:
+    first_number = input("first_number:")
+    second_number = input("second_number:")
+    if second_number == 'q':
+        break
+    try:
+        answer = int(first_number) / int(second_number)
+    except ZeroDivisionError:
+        print("You can't divide by zero!")
+    else:
+        print(answer)
+```
+- 处理FileNotFoundError异常 (same as above)
+- 静默失败
+```python
+except ZeroDivisionError:
+  pass
+```
+- 计算一个文件大致包含多少单词
+```python
+from pathlib import Path
+
+def count_words(filepath):
+    path = Path(filepath)
+    content = path.read_text()
+    return len(content.split())
+
+print(count_words('resources/pi_digits.txt'))
+```
+
+### 存储数据
+- 使用模块json来存储数据
+- 使用json.dumps()和json.loads()
+```python
+from pathlib import Path
+import json
+
+numbers = [2,3,5,7,9,11,13,15,17,19,23]
+contents = json.dumps(numbers)
+path = Path('resources/numbers.json')
+path.write_text(contents)
+
+path = Path('resources/numbers.json')
+contents = path.read_text()
+print(json.loads(contents))
+```
+
+### 测试
+- pytest
+```python
+def test_formatted_name():
+    formatted_name = get_formatted_name('janis', 'joplin')
+    assert formatted_name == 'Janis Joplin'
+```
+- 测试中常用的断言
+```python
+assert a == b
+assert a != b
+assert a
+assert not a
+assert element in list
+assert element not in list
+```
 
 
 

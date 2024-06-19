@@ -52,6 +52,83 @@
 # my_new_car.increment_odometer(99)
 # my_new_car.read_odometer()
 
-from random import randint
+# from random import randint
+#
+# print(randint(1,6))
+#
+# from random import choice
+#
+# players = ['carles','michael','florence','eli']
+# first = choice(players)
+# second = choice(players)
+# print(first)
+# print(second)
 
-print(randint(1,6))
+
+# from pathlib import Path
+
+# path = Path('resources/pi_digits.txt')
+# content = path.read_text()
+# lines = content.splitlines()
+# pi_string = ''
+#
+# for line in lines:
+#     pi_string += line.lstrip()
+#
+# print(pi_string)
+# print(len(pi_string))
+
+
+# for line in lines:
+#     if '323846' in line:
+#         print(line)
+
+# print(content)
+# print('----')
+# print(content.rstrip())
+
+# path = Path('resources/pi_digits.txt')
+# content = 'hello world.\n'
+# content += 'This is the first line.\n'
+# content += 'This is the second line.\n'
+# path.write_text( content)
+
+# try:
+#     print(5/0)
+# except ZeroDivisionError:
+#     print("You can't divide by zero!")
+# print("Give me two numbers, and I'll divide them.\n")
+# print("Enter 'q' to exit\n")
+# while True:
+#     first_number = input("first_number:")
+#     second_number = input("second_number:")
+#     if second_number == 'q':
+#         break
+#     try:
+#         answer = int(first_number) / int(second_number)
+#     except ZeroDivisionError:
+#         print("You can't divide by zero!")
+#     else:
+#         print(answer)
+
+# from pathlib import Path
+#
+# def count_words(filepath):
+#     path = Path(filepath)
+#     content = path.read_text()
+#     return len(content.split())
+#
+# print(count_words('resources/pi_digits.txt'))
+
+# from pathlib import Path
+# import json
+#
+# numbers = [2,3,5,7,9,11,13,15,17,19,23]
+# contents = json.dumps(numbers)
+# path = Path('resources/numbers.json')
+# path.write_text(contents)
+#
+# path = Path('resources/numbers.json')
+# contents = path.read_text()
+# print(json.loads(contents))
+
