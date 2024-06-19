@@ -131,39 +131,46 @@ print(user_profile)
 
 ### 将函数存储在模块中
 import语句可让你在当前运行的程序文件中使用模块的代码。
-```python
-import pizza
 
-pizza.make_pizza(20,'pepperoni')
-pizza.make_pizza(15,'mushrooms','green peppers')
+```python
+
+from part1 import pizza
+
+pizza.make_pizza(20, 'pepperoni')
+pizza.make_pizza(15, 'mushrooms', 'green peppers')
 ```
 - 导入特定的函数
-```python
-from pizza import make_pizza
 
-make_pizza(20,'pepperoni')
-make_pizza(15,'mushrooms','green peppers')
+```python
+from part1.pizza import make_pizza
+
+make_pizza(20, 'pepperoni')
+make_pizza(15, 'mushrooms', 'green peppers')
 ```
 ```python
 from module_name import function_0, function_1, function_2
 ```
 - 使用as给函数、模块指定别名
-```python
-from pizza import make_pizza as mp
 
-mp(20,'pepperoni')
-mp(15,'mushrooms','green peppers')
+```python
+from part1.pizza import make_pizza as mp
+
+mp(20, 'pepperoni')
+mp(15, 'mushrooms', 'green peppers')
 ```
-```python
-import pizza as pzz
 
-pzz.make_pizza(20,'pepperoni')
-pzz.make_pizza(15,'mushrooms','green peppers')
+```python
+
+from part1 import pizza as pzz
+
+pzz.make_pizza(20, 'pepperoni')
+pzz.make_pizza(15, 'mushrooms', 'green peppers')
 ```
 
 - 导入模块中的所有函数 (不推荐)
+
 ```python
-from pizza import *
+from part1.pizza import *
 ```
 
 ## 类
@@ -259,8 +266,10 @@ import car
 from module_name import *
 ```
 - 使用别名
+
 ```python
-from electric_car import ElectricCar as EC
+from part1.electric_car import ElectricCar as EC
+
 my_leaf = EC('nissan', 'leaf', 2024)
 ```
 
@@ -287,10 +296,11 @@ print(second)
 ## 文件和异常
 - 读取文件全部内容
 - pathlib模块处理文件和目录
+
 ```python
 from pathlib import Path
 
-path = Path('resources/pi_digits.txt')
+path = Path('../resources/pi_digits.txt')
 content = path.read_text()
 print(content)
 ```
